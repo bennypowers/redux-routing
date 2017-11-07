@@ -1,6 +1,3 @@
-import querystring from 'querystring'
-import url from 'url'
-
 export default function createMiddleware (History) {
   return store => {
     let history
@@ -15,7 +12,7 @@ export default function createMiddleware (History) {
         return next(action)
       }
 
-      const parsed = url.parse(action.href)
+      const parsed = new URL(action.href)
 
       const location = {
         hash: parsed.hash || undefined,
@@ -25,8 +22,8 @@ export default function createMiddleware (History) {
 
       let query
 
-      if (parsed.query) {
-        query = querystring.parse(parsed.query)
+      if (parsed.search) {
+        query = new URLSearchParams(parsed.search)
       }
 
       const result = next(Object.assign({}, action, {
