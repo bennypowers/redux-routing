@@ -1,5 +1,5 @@
-import { replace } from './actions'
-import { NAVIGATE } from './constants'
+import { replace } from './actions.js'
+import { NAVIGATE } from './constants.js'
 
 function hashToHref (hash) {
   return hash.slice(1) || '/'

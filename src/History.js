@@ -1,5 +1,5 @@
-import { replace } from './actions'
-import { NAVIGATE, REPLACE } from './constants'
+import { replace } from './actions.js'
+import { NAVIGATE, REPLACE } from './constants.js'
 
 export default class History {
   constructor (store) {

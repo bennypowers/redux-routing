@@ -1,4 +1,4 @@
-import { NAVIGATE, REPLACE } from './constants'
+import { NAVIGATE, REPLACE } from './constants.js'
 
 export default function reducer (route = {}, action) {
   switch (action.type) {
